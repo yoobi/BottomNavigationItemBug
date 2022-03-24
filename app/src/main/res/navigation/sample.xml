@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/sample"
+    app:startDestination="@id/tab_home">
+
+    <navigation
+        android:id="@+id/tab_home"
+        app:startDestination="@id/frag_home"
+        >
+        <fragment
+            android:id="@+id/frag_home"
+            android:name="io.github.yoobi.navbug.HomeFragment"
+            tools:layout="@layout/fragment_home">
+            <action
+                android:id="@+id/cause_bug"
+                app:destination="@id/frag_hint"/>
+            <action
+                android:id="@+id/causeCrash"
+                app:destination="@id/frag_book">
+                <argument
+                    android:name="name"
+                    app:argType="string"/>
+            </action>
+        </fragment>
+
+        <fragment
+            android:id="@+id/frag_hint"
+            android:name="io.github.yoobi.navbug.HintFragment"
+            android:label="Hint"
+            tools:layout="@layout/fragment_hint"/>
+    </navigation>
+
+    <navigation
+        android:id="@+id/tab_books"
+        app:startDestination="@id/frag_shelf">
+        <fragment
+            android:id="@+id/frag_shelf"
+            android:name="io.github.yoobi.navbug.ShelfFragment"
+            android:label="Shelf Fragment"
+            tools:layout="@layout/fragment_shelf">
+            <action
+                android:id="@+id/open_book"
+                app:destination="@id/frag_book">
+                <argument
+                    android:name="name"
+                    app:argType="string"/>
+            </action>
+        </fragment>
+
+        <fragment
+            android:id="@+id/frag_book"
+            android:name="io.github.yoobi.navbug.BookFragment"
+            android:label="Book Fragment"
+            tools:layout="@layout/fragment_book">
+            <argument
+                android:name="name"
+                app:argType="string"/>
+        </fragment>
+    </navigation>
+
+    <navigation
+        android:id="@+id/tab_more"
+        app:startDestination="@id/dialog_more">
+        <dialog
+            android:id="@+id/dialog_more"
+            android:name="io.github.yoobi.navbug.MoreDialog"
+            android:label="More Dialog"
+            tools:layout="@layout/dialog_more">
+            <action
+                android:id="@+id/open_sub_menu"
+                app:destination="@id/frag_sub_menu">
+                <argument
+                    android:name="name"
+                    app:argType="string"/>
+            </action>
+        </dialog>
+
+        <fragment
+            android:id="@+id/frag_sub_menu"
+            android:name="io.github.yoobi.navbug.SubMenuFragment"
+            android:label="SubMenu Fragment"
+            tools:layout="@layout/fragment_sub_menu">
+            <argument
+                android:name="name"
+                app:argType="string"/>
+        </fragment>
+    </navigation>
+</navigation>

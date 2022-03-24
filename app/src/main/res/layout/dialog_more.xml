@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context="io.github.yoobi.navbug.ShelfFragment">
+
+
+    <TextView
+        android:id="@+id/more1"
+        android:text="MoreOneFragment"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:paddingVertical="12dp"
+        />
+
+    <TextView
+        android:id="@+id/more2"
+        android:text="MoreTwoFragment"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:paddingVertical="12dp"
+        />
+
+    <TextView
+        android:id="@+id/more3"
+        android:text="MoreThreeFragment"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:paddingVertical="12dp"
+        />
+</LinearLayout>
